@@ -20,6 +20,15 @@ class MLTabBarController : UITabBarController {
         SVProgressHUD.setForegroundColor(UIColor.whiteColor())
         SVProgressHUD.setBackgroundColor(UIColor.blackColor())
         SVProgressHUD.setDefaultStyle(.Custom)
+
+        for item in self.tabBar.items! as [UITabBarItem] {
+            if let image = item.image {
+                item.image = image.imageWithColor(UIColor.lightGrayColor()).imageWithRenderingMode(.AlwaysOriginal)
+            }
+            if let selectedImage = item.selectedImage {
+                item.selectedImage = selectedImage.imageWithColor(UIColor.darkGrayColor()).imageWithRenderingMode(.AlwaysOriginal)
+            }
+        }
     }
     
     
