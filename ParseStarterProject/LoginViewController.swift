@@ -9,6 +9,7 @@
 
 import UIKit
 import Parse
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
@@ -28,11 +29,12 @@ class LoginViewController: UIViewController {
         
         User.logInWithUsernameInBackground(user.username!, password: user.password!) { (var user: PFUser?, error: NSError?) -> Void in
             if user != nil {
+                SVProgressHUD.show()
                 PFQuery.clearAllCachedResults()
-                self.dismissViewControllerAnimated(true, completion: nil)
                 user = MadLibManager.sharedInstance.currentUser
                 user?.objectId = user?.valueForKey("objectId") as? String
                 self.setUserImage()
+                self.dismissViewControllerAnimated(true, completion: nil)
             } else {
                 let alertView = UIAlertController(title: "WOAH NOW", message: "You don't have an account, please register.", preferredStyle: .Alert)
                 alertView.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))

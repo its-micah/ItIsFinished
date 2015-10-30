@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SVProgressHUD
 import UIKit
 import Parse
 
@@ -42,6 +43,7 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
                     self.feedArray.append(madLib)
                 }
                 self.feedCollectionView.reloadData()
+                SVProgressHUD.dismiss()
             } else {
                self.animateEmptyFeedView()
             }
