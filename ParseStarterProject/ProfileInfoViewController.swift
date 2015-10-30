@@ -62,4 +62,8 @@ class ProfileInfoViewController: UIViewController, UIImagePickerControllerDelega
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func onCancelTapped(sender: AnyObject) {
+
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
