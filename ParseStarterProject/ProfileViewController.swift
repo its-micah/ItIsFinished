@@ -14,6 +14,7 @@ import UIKit
 
 class ProfileViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, NetworkProtocol {
 
+    @IBOutlet weak var backButton: UIBarButtonItem!
     var userFeedArray: Array<PFObject> = [PFObject]()
     let imagePicker = UIImagePickerController()
     var tapRecog: UITapGestureRecognizer = UITapGestureRecognizer()
@@ -38,6 +39,8 @@ class ProfileViewController: UICollectionViewController, UIImagePickerController
     override func viewWillAppear(animated: Bool) {
         if previousViewController != "FeedViewController" {
             user = MadLibManager.sharedInstance.currentUser
+            backButton.enabled = false
+            backButton.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         }
 
         NetworkManager.sharedInstance.loadUserLibsWithUser(user!)
@@ -119,5 +122,8 @@ class ProfileViewController: UICollectionViewController, UIImagePickerController
     }
 
 
+    @IBAction func onBackButtonTapped(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true);
+    }
     
 }
