@@ -1,0 +1,16 @@
+PODS:
+  - CSStickyHeaderFlowLayout (0.2.10)
+  - SCCollectionViewController (1.0.1)
+  - SVProgressHUD (HEAD based on 1.1.3)
+
+DEPENDENCIES:
+  - CSStickyHeaderFlowLayout
+  - SCCollectionViewController (~> 1.0)
+  - SVProgressHUD (HEAD)
+
+SPEC CHECKSUMS:
+  CSStickyHeaderFlowLayout: 5366582779d8b7c9ba9b9cc729c218cc23888776
+  SCCollectionViewController: d350fff827b54c7b35e0307debe2f1883d17b01f
+  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+
+COCOAPODS: 0.39.0

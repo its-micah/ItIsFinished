@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9058" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rvq-9V-amr">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9048"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="gxq-gm-9mS">
+            <objects>
+                <viewController id="rvq-9V-amr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cUd-Ve-MyN"/>
+                        <viewControllerLayoutGuide type="bottom" id="v2c-Rt-Cal"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1gt-1N-HuY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quoteMarks" translatesAutoresizingMaskIntoConstraints="NO" id="lrp-Ei-Cgb">
+                                <rect key="frame" x="225" y="225" width="150" height="150"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="6wa-SW-rCI"/>
+                                    <constraint firstAttribute="width" constant="150" id="x8H-1q-K2c"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.26666666666666666" green="0.69019607843137254" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="lrp-Ei-Cgb" firstAttribute="centerY" secondItem="1gt-1N-HuY" secondAttribute="centerY" id="q8p-Pp-34Z"/>
+                            <constraint firstItem="lrp-Ei-Cgb" firstAttribute="centerX" secondItem="1gt-1N-HuY" secondAttribute="centerX" id="vKn-Bo-hlu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g4I-rP-YYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1485" y="183"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="quoteMarks" width="107" height="76"/>
+    </resources>
+</document>

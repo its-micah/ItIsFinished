@@ -1,0 +1,6 @@
+framework module SCCollectionViewController {
+  umbrella header "SCCollectionViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}
