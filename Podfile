@@ -4,3 +4,5 @@ pod ’SVProgressHUD’, :head
 pod ‘CSStickyHeaderFlowLayout’
 use_frameworks!
 pod 'SCCollectionViewController', '~> 1.0'
+pod 'ParseTwitterUtils'
+pod ‘ParseUI’
