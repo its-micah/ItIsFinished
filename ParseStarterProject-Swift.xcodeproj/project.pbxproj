@@ -56,6 +56,9 @@
 		C75CBC271BDD5450004D03A2 /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75CBC161BDD5450004D03A2 /* IQUIView+IQKeyboardToolbar.swift */; };
 		C75CBC281BDD5450004D03A2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C75CBC181BDD5450004D03A2 /* Info.plist */; };
 		C75CBC291BDD5450004D03A2 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C75CBC191BDD5450004D03A2 /* IQKeyboardManager.bundle */; };
+		C75F0FCD1BE42C5C00E6CF6E /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75F0FCC1BE42C5C00E6CF6E /* Twitter.framework */; };
+		C75F0FCF1BE42C6E00E6CF6E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75F0FCE1BE42C6E00E6CF6E /* Social.framework */; };
+		C75F0FD11BE42C7500E6CF6E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75F0FD01BE42C7500E6CF6E /* Accounts.framework */; };
 		C77385281BDF1A0600A86E51 /* DataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77385271BDF1A0600A86E51 /* DataProtocol.swift */; };
 		C773852A1BDF1B6700A86E51 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77385291BDF1B6700A86E51 /* SearchCell.swift */; };
 		C7975D8C1BE03DD600EF601B /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7975D8B1BE03DD600EF601B /* ProfileHeaderView.xib */; };
@@ -118,6 +121,9 @@
 		C75CBC161BDD5450004D03A2 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		C75CBC181BDD5450004D03A2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C75CBC191BDD5450004D03A2 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		C75F0FCC1BE42C5C00E6CF6E /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		C75F0FCE1BE42C6E00E6CF6E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		C75F0FD01BE42C7500E6CF6E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C77385271BDF1A0600A86E51 /* DataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocol.swift; sourceTree = "<group>"; };
 		C77385291BDF1B6700A86E51 /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		C7975D8B1BE03DD600EF601B /* ProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
@@ -131,6 +137,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C75F0FD11BE42C7500E6CF6E /* Accounts.framework in Frameworks */,
+				C75F0FCF1BE42C6E00E6CF6E /* Social.framework in Frameworks */,
+				C75F0FCD1BE42C5C00E6CF6E /* Twitter.framework in Frameworks */,
 				753F3A5C1BD6C10E001CD7E8 /* Security.framework in Frameworks */,
 				C75CBC031BDD1DAD004D03A2 /* Crashlytics.framework in Frameworks */,
 				81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */,
@@ -225,6 +234,9 @@
 		81BA816A1A49DB5600E65899 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C75F0FD01BE42C7500E6CF6E /* Accounts.framework */,
+				C75F0FCE1BE42C6E00E6CF6E /* Social.framework */,
+				C75F0FCC1BE42C5C00E6CF6E /* Twitter.framework */,
 				753F3A5B1BD6C10E001CD7E8 /* Security.framework */,
 				81BA816B1A49DB6800E65899 /* Bolts.framework */,
 				81BA816C1A49DB6800E65899 /* Parse.framework */,
@@ -640,7 +652,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "ParseStarterProject-Swift";
-				PROVISIONING_PROFILE = "de06b53f-75e6-46cc-bfd3-f20f4c5f0338";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ParseStarterProject/ParseStarterProject-Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -663,7 +675,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "ParseStarterProject-Swift";
-				PROVISIONING_PROFILE = "de06b53f-75e6-46cc-bfd3-f20f4c5f0338";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ParseStarterProject/ParseStarterProject-Swift-Bridging-Header.h";
 			};
 			name = Release;
