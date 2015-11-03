@@ -10,6 +10,7 @@ import Foundation
 import SVProgressHUD
 import UIKit
 import Parse
+import ParseTwitterUtils
 
 class FeedViewController: UIViewController,
 UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, FeedCellProtocol {
@@ -18,25 +19,26 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
     @IBOutlet weak var emptyFeedView: UIView!
     var feedArray: Array<PFObject> = [PFObject]()
     var postUser: User?
+    var loaded: Bool? = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         feedCollectionView.delegate = self
         feedCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-//        feedArray = [PFObject]()
     }
+
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         loadLibs()
         self.emptyFeedView.alpha = 0
     }
-    
+
     func loadLibs() {
         let query = PFQuery(className: "MadLib")
         query.orderByDescending("createdAt")
         query.cachePolicy = .CacheThenNetwork
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
-            if error == nil && objects?.count != 0 {
+            if error == nil && objects?.count > 0 && objects?.count > self.feedArray.count {
                 print("received \(objects?.count) madlibs")
                 self.feedArray.removeAll()
                 for var madLib in objects! {
@@ -66,13 +68,17 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = feedCollectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! FeedCell
-        cell.delegate = self
-        cell.configureWithPost(feedArray[indexPath.row])
+        var cell = feedCollectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as? FeedCell
+        if cell == nil {
+            cell = FeedCell()
+        }
+        cell?.userImageView.image = UIImage(named: "profile")
+        cell!.delegate = self
+        cell!.configureWithPost(feedArray[indexPath.row])
         postUser = feedArray[indexPath.row].objectForKey("user") as? User
-        cell.configureWithUser(postUser!)
-        cell.addTapRecog()
-        return cell
+        cell!.configureWithUser(postUser!)
+        cell!.addTapRecog()
+        return cell!
     }
 
     func showProfile() {
