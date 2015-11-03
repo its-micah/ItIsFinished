@@ -38,7 +38,7 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
         query.orderByDescending("createdAt")
         query.cachePolicy = .CacheThenNetwork
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
-            if error == nil && objects?.count > 0 && objects?.count > self.feedArray.count {
+            if error == nil && objects?.count > 0 && objects?.count != self.feedArray.count {
                 print("received \(objects?.count) madlibs")
                 self.feedArray.removeAll()
                 for var madLib in objects! {
