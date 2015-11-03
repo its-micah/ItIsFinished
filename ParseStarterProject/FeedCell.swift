@@ -8,6 +8,7 @@
 
 import Foundation
 import Parse
+import ParseUI
 import UIKit
 
 protocol FeedCellProtocol {
@@ -17,8 +18,8 @@ protocol FeedCellProtocol {
 
 class FeedCell: UICollectionViewCell {
     
+    @IBOutlet weak var userImageView: PFImageView!
     @IBOutlet weak var feedCellLabel: UILabel!
-    @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     var delegate : FeedCellProtocol?
     let tapRecog = UITapGestureRecognizer()
@@ -44,13 +45,10 @@ class FeedCell: UICollectionViewCell {
         return self
     }
 
-    func configureWithImage(image: PFFile) -> FeedCell {
-        image.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
-            if imageData != nil {
-                self.userImageView.image = UIImage(data: imageData!)
-            }
-        })
-        return self
+    func configureWithImage(image: PFFile) {
+        userImageView.image = UIImage(named: "profile-1")
+        userImageView.file = image
+        userImageView.loadInBackground()
     }
 
     func addTapRecog() {
