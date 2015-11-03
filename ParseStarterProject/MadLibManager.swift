@@ -13,7 +13,7 @@ class MadLibManager {
     
     static let sharedInstance = MadLibManager()
 
-    let currentUser = PFUser.currentUser() as! User
+    var currentUser = PFUser.currentUser() as! User
 
     private init(){
         print("")

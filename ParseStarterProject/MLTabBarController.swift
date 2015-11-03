@@ -29,23 +29,40 @@ class MLTabBarController : UITabBarController {
                 item.selectedImage = selectedImage.imageWithColor(UIColor.darkGrayColor()).imageWithRenderingMode(.AlwaysOriginal)
             }
         }
+
     }
+
+
     
     
     func checkUserLogin() {
-    
-        let userName = ""
-        let password = ""
-        
-        User.logInWithUsernameInBackground(userName, password: password) { (var user: PFUser?, error: NSError?) -> Void in
-            if user != nil {
-                print("did log in")
-                user = MadLibManager.sharedInstance.currentUser
-            } else {
+
+        if PFUser.currentUser() == nil {
+
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+
                 self.presentLogInScreen()
-            }
+
+            })
+
+        } else {
+            print("did log in")
         }
-    
+
+//        
+//        let userName = ""
+//        let password = ""
+//        
+//        User.logInWithUsernameInBackground(userName, password: password) { (var user: PFUser?, error: NSError?) -> Void in
+//            if user != nil {
+//                print("did log in")
+//                user = MadLibManager.sharedInstance.currentUser
+//            } else {
+//                self.presentLogInScreen()
+//
+//            }
+//        }
+
     }
 
 

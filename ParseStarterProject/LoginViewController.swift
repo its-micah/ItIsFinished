@@ -10,6 +10,7 @@
 import UIKit
 import Parse
 import SVProgressHUD
+import ParseTwitterUtils
 
 class LoginViewController: UIViewController {
 
@@ -44,6 +45,70 @@ class LoginViewController: UIViewController {
 
        
     }
+
+    @IBAction func onTwitterButtonTapped(sender: AnyObject) {
+
+        PFTwitterUtils.logInWithBlock {
+            (user: PFUser?, var error: NSError?) -> Void in
+            if var user = user {
+                if user.isNew {
+                    SVProgressHUD.show()
+                    print("User signed up and logged in with Twitter!")
+                    let newUser = MadLibManager.sharedInstance.currentUser
+                    let twitterUsername = PFTwitterUtils.twitter()?.screenName
+                    newUser.username = twitterUsername
+    
+                    let requestString = ("https://api.twitter.com/1.1/users/show.json?screen_name=" + twitterUsername!)
+
+                    let verify: NSURL = NSURL(string: requestString)!
+
+                    let request: NSMutableURLRequest = NSMutableURLRequest(URL: verify)
+
+                    PFTwitterUtils.twitter()?.signRequest(request)
+
+                    var response: NSURLResponse?
+
+                    do {
+                        let data: NSData = try NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
+                        let result = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
+                        let urlString = result.objectForKey("profile_image_url_https") as! String
+                        let hiResUrlString = urlString.stringByReplacingOccurrencesOfString("_normal", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+
+
+                        let twitterPhotoUrl = NSURL(string: hiResUrlString)
+                        let imageData = NSData(contentsOfURL: twitterPhotoUrl!)
+
+                        let imageFile = PFFile(name: "profilePic.jpg", data: imageData!)
+                        newUser.profilePicture = imageFile
+                        newUser.convertToImageWithPFFile(imageFile)
+
+                        newUser.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                            if success {
+                                self.dismissViewControllerAnimated(true, completion: nil)
+                            }
+                        })
+
+                    } catch {
+                        print("error with synchronouss request")
+                    }
+
+
+
+
+
+                    } else {
+                    print("User logged in with Twitter!")
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+            } else {
+                print("Uh oh. The user cancelled the Twitter login.")
+            }
+        }
+
+    }
+
+
+
 
 
     func setUserImage() {

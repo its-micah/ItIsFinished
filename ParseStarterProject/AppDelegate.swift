@@ -11,9 +11,10 @@ import UIKit
 import Fabric
 import Crashlytics
 import Parse
+import ParseTwitterUtils
+
 
 // If you want to use any of the UI components, uncomment this line
-// import ParseUI
 
 // If you want to use Crash Reporting - uncomment this line
 // import ParseCrashReporting
@@ -33,22 +34,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         User.registerSubclass()
         UIApplication.sharedApplication().statusBarStyle = .LightContent
 
-        //Parse.enableLocalDatastore()
+//        Parse.enableLocalDatastore()
 
         // ****************************************************************************
         // Uncomment this line if you want to enable Crash Reporting
         // ParseCrashReporting.enable()
         //
         // Uncomment and fill in with your Parse credentials:
-         Parse.setApplicationId("1c5Lmxa3acRwUaFiGAzDHS1PulSZUYUAvCLbGjxb", clientKey: "1S03PJshoa0EMv7fveD8SmxvUFfSveMcSm9JC9QI")
+        Parse.setApplicationId("1c5Lmxa3acRwUaFiGAzDHS1PulSZUYUAvCLbGjxb", clientKey: "1S03PJshoa0EMv7fveD8SmxvUFfSveMcSm9JC9QI")
+
+       PFTwitterUtils.initializeWithConsumerKey("MCsq5m2LErUZGX1zaGkBTkhhz",  consumerSecret:"EufrbQBP59DPiGpUdcUGBcraPg11wcWgKTTaUmqe0OY5BobUHX")
         //
         // If you are using Facebook, uncomment and add your FacebookAppID to your bundle's plist as
         // described here: https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/
         // Uncomment the line inside ParseStartProject-Bridging-Header and the following line here:
-        // PFFacebookUtils.initializeFacebook()
-        // ****************************************************************************
+        //PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions);        // ****************************************************************************
 
-        PFUser.enableAutomaticUser()
+        //PFUser.enableAutomaticUser()
+
+
 
         let defaultACL = PFACL();
 
@@ -156,4 +160,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
     //     return FBAppCall.handleOpenURL(url, sourceApplication:sourceApplication, session:PFFacebookUtils.session())
     // }
+
+//    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+//    return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+//    }
+//
+//    func applicationDidBecomeActive(application: UIApplication) {
+//        FBSDKAppEvents.activateApp()
+//    }
 }
