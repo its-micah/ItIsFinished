@@ -49,19 +49,6 @@ class MLTabBarController : UITabBarController {
             print("did log in")
         }
 
-//        
-//        let userName = ""
-//        let password = ""
-//        
-//        User.logInWithUsernameInBackground(userName, password: password) { (var user: PFUser?, error: NSError?) -> Void in
-//            if user != nil {
-//                print("did log in")
-//                user = MadLibManager.sharedInstance.currentUser
-//            } else {
-//                self.presentLogInScreen()
-//
-//            }
-//        }
 
     }
 

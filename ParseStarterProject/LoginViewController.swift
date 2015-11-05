@@ -93,15 +93,15 @@ class LoginViewController: UIViewController {
                     }
 
 
-
-
-
-                    } else {
+                } else {
                     print("User logged in with Twitter!")
                     self.dismissViewControllerAnimated(true, completion: nil)
                 }
+
             } else {
+
                 print("Uh oh. The user cancelled the Twitter login.")
+
             }
         }
 

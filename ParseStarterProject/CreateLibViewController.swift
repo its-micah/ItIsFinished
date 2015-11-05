@@ -27,7 +27,6 @@ import UIKit
         attrString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
 
         madLibText.attributedText = attrString
-        //madLibText.text =  libText
 
     }
 
