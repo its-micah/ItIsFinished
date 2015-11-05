@@ -23,6 +23,13 @@ class LoginViewController: UIViewController {
         
     }
 
+    override func viewWillAppear(animated: Bool) {
+        if MadLibManager.sharedInstance.currentUser != nil {
+            self.dismissViewControllerAnimated(true, completion: nil)
+            SVProgressHUD.dismiss()
+        }
+    }
+
     @IBAction func onButtonTapped(sender: AnyObject) {
         let user = User()
         user.username = usernameField.text
@@ -56,7 +63,7 @@ class LoginViewController: UIViewController {
                     print("User signed up and logged in with Twitter!")
                     let newUser = MadLibManager.sharedInstance.currentUser
                     let twitterUsername = PFTwitterUtils.twitter()?.screenName
-                    newUser.username = twitterUsername
+                    newUser!.username = twitterUsername
     
                     let requestString = ("https://api.twitter.com/1.1/users/show.json?screen_name=" + twitterUsername!)
 
@@ -79,10 +86,10 @@ class LoginViewController: UIViewController {
                         let imageData = NSData(contentsOfURL: twitterPhotoUrl!)
 
                         let imageFile = PFFile(name: "profilePic.jpg", data: imageData!)
-                        newUser.profilePicture = imageFile
-                        newUser.convertToImageWithPFFile(imageFile)
+                        newUser!.profilePicture = imageFile
+                        newUser!.convertToImageWithPFFile(imageFile)
 
-                        newUser.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                        newUser!.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
                             if success {
                                 self.dismissViewControllerAnimated(true, completion: nil)
                             }
@@ -112,8 +119,8 @@ class LoginViewController: UIViewController {
 
 
     func setUserImage() {
-        let currentUserImageFile = MadLibManager.sharedInstance.currentUser.profilePicture
-        MadLibManager.sharedInstance.currentUser.convertToImageWithPFFile(currentUserImageFile)
+        let currentUserImageFile = MadLibManager.sharedInstance.currentUser!.profilePicture
+        MadLibManager.sharedInstance.currentUser!.convertToImageWithPFFile(currentUserImageFile)
     }
     
     @IBAction func onRegisterButtonTapped(sender: AnyObject) {

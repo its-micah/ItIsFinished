@@ -9,6 +9,7 @@
 import Foundation
 import Parse
 import UIKit
+import SVProgressHUD
 
 class ProfileInfoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -31,8 +32,7 @@ class ProfileInfoViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func onDoneButtonTapped(sender: AnyObject) {
-        let newUser = MadLibManager.sharedInstance.currentUser
-        
+        let newUser = User()
         newUser.fullName = nameTextField.text
         newUser.username = usernameTextField.text
         newUser.password = passwordTextField.text
@@ -40,16 +40,19 @@ class ProfileInfoViewController: UIViewController, UIImagePickerControllerDelega
         let imageFile = PFFile(name: "profilePic.jpg", data: imageData!)
         newUser.profilePicture = imageFile
         newUser.convertToImageWithPFFile(imageFile)
+        SVProgressHUD.show()
         newUser.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if success {
+                let login: LoginViewController = self.presentingViewController as! LoginViewController
                 self.dismissViewControllerAnimated(true, completion: nil)
+                MadLibManager.sharedInstance.currentUser = newUser
             }
         }
     }
 
     func showCameraPicker() {
         print("tapped")
-        imagePicker.sourceType = .Camera
+        imagePicker.sourceType = .PhotoLibrary
         presentViewController(imagePicker, animated: true, completion: nil)
     }
 

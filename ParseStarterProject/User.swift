@@ -12,6 +12,10 @@ import Parse
 
 
 class User: PFUser {
+
+    override init() {
+        super.init()
+    }
     
     override class func initialize() {
         struct Static {

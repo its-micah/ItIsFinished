@@ -13,7 +13,7 @@ class MadLibManager {
     
     static let sharedInstance = MadLibManager()
 
-    var currentUser = PFUser.currentUser() as! User
+    var currentUser = PFUser.currentUser() as? User
 
     private init(){
         print("")
@@ -22,7 +22,7 @@ class MadLibManager {
     func convertToImageWithPFFile(file: PFFile?) {
         file?.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
             if imageData != nil {
-                self.currentUser.profileImage = UIImage(data: imageData!)
+                self.currentUser!.profileImage = UIImage(data: imageData!)
             }
         })
     }
