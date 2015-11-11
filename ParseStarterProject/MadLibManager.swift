@@ -14,6 +14,7 @@ class MadLibManager {
     static let sharedInstance = MadLibManager()
 
     var currentUser = PFUser.currentUser() as? User
+    var quoteOfDay: String?
 
     private init(){
         print("")
@@ -25,6 +26,12 @@ class MadLibManager {
                 self.currentUser!.profileImage = UIImage(data: imageData!)
             }
         })
+    }
+
+
+    func getQuoteOfDay() -> String {
+        quoteOfDay = NetworkManager.sharedInstance.loadQuoteOfDay()
+        return quoteOfDay!
     }
 
 
