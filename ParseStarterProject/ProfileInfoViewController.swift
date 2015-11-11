@@ -32,22 +32,39 @@ class ProfileInfoViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func onDoneButtonTapped(sender: AnyObject) {
-        let newUser = User()
-        newUser.fullName = nameTextField.text
-        newUser.username = usernameTextField.text
-        newUser.password = passwordTextField.text
-        let imageData = avatarImageView.image?.lowestQualityJPEGNSData
-        let imageFile = PFFile(name: "profilePic.jpg", data: imageData!)
-        newUser.profilePicture = imageFile
-        newUser.convertToImageWithPFFile(imageFile)
-        SVProgressHUD.show()
-        newUser.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            if success {
-                let login: LoginViewController = self.presentingViewController as! LoginViewController
-                self.dismissViewControllerAnimated(true, completion: nil)
-                MadLibManager.sharedInstance.currentUser = newUser
+
+        if nameTextField.text == "" {
+            showAlert()
+        } else if usernameTextField.text == "" {
+            showAlert()
+        } else if passwordTextField.text == "" {
+            showAlert()
+        } else {
+
+            let newUser = User()
+            newUser.fullName = nameTextField.text
+            newUser.username = usernameTextField.text
+            newUser.password = passwordTextField.text
+            let imageData = avatarImageView.image?.lowestQualityJPEGNSData
+            let imageFile = PFFile(name: "profilePic.jpg", data: imageData!)
+            newUser.profilePicture = imageFile
+            newUser.convertToImageWithPFFile(imageFile)
+            SVProgressHUD.show()
+            newUser.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                if success {
+                    let login: LoginViewController = self.presentingViewController as! LoginViewController
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                    MadLibManager.sharedInstance.currentUser = newUser
+                }
             }
         }
+    }
+
+    func showAlert() {
+        SVProgressHUD.dismiss()
+        let alertView = UIAlertController(title: "WOAH NOW", message: "You didn't fill everything out.", preferredStyle: .Alert)
+        alertView.addAction(UIAlertAction(title: "OK, Whatever", style: .Default, handler: nil))
+        self.presentViewController(alertView, animated: true, completion: nil)
     }
 
     func showCameraPicker() {
