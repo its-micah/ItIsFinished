@@ -35,16 +35,27 @@ import UIKit
     }
     
     @IBAction func onSubmitButtonTapped(sender: AnyObject) {
-        view.endEditing(true)
-        SVProgressHUD.show()
-        let newLib = MadLib(labelText: madLibText.text!, userText: textField.text!)
-        newLib.user = PFUser.currentUser() as! User
-        newLib.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            if success {
-                print("MadLib saved")
-                self.navigationController?.popToRootViewControllerAnimated(true)
-            } else {
-                print("\(error?.debugDescription)")
+
+        if textField.text == "" {
+
+            let alertView = UIAlertController(title: "WOAH NOW", message: "You didn't finish it!", preferredStyle: .Alert)
+            alertView.addAction(UIAlertAction(title: "OK, Whatever", style: .Default, handler: nil))
+            self.presentViewController(alertView, animated: true, completion: nil)
+
+        } else {
+            view.endEditing(true)
+            let newLib = MadLib(labelText: madLibText.text!, userText: textField.text!)
+            newLib.user = PFUser.currentUser() as! User
+            newLib.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                if success {
+                    SVProgressHUD.show()
+                    print("MadLib saved")
+                    self.tabBarController?.selectedIndex = 0
+                    let firstNavController = self.tabBarController?.selectedViewController as! UINavigationController
+                    firstNavController.popToRootViewControllerAnimated(true)
+                } else {
+                    print("\(error?.debugDescription)")
+                }
             }
         }
     }
