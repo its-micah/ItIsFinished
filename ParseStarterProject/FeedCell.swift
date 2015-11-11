@@ -13,6 +13,8 @@ import UIKit
 
 protocol FeedCellProtocol {
     func showProfile()
+    func showSharingWithImageAndText(image: UIImage, text: String)
+    var selectedUser: User? {get set}
 }
  
 
@@ -23,8 +25,15 @@ class FeedCell: UICollectionViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     var delegate : FeedCellProtocol?
     let tapRecog = UITapGestureRecognizer()
+    var postUser: User?
 
-    func configureWithPost(post: PFObject) -> FeedCell {
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        FeedViewController().postUser = nil
+
+    }
+
+    func configureWithPost(post: PFObject) {
         let lib = post.objectForKey("newLib") as? String
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 9
@@ -32,7 +41,17 @@ class FeedCell: UICollectionViewCell {
         let attrString = NSMutableAttributedString(string: lib!)
         attrString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
         feedCellLabel.attributedText = attrString
-        return self
+
+        if postUser != nil {
+
+            postUser!.fetchIfNeededInBackgroundWithBlock { (user: PFObject?, error: NSError?) -> Void in
+                let name = user!.objectForKey("username") as! String
+                self.userNameLabel.text = name
+                let image = user!.objectForKey("profilePicture") as! PFFile
+                self.configureWithImage(image)
+            }
+        }
+
     }
 
     func configureWithUser(postUser: User) -> FeedCell {
@@ -57,7 +76,21 @@ class FeedCell: UICollectionViewCell {
         userImageView.addGestureRecognizer(tapRecog)
     }
 
+    @IBAction func shareButtonTapped(sender: AnyObject) {
+        print("tapped cell")
+        UIGraphicsBeginImageContext(CGSizeMake(self.frame.size.width, self.frame.size.height))
+        let context: CGContextRef = UIGraphicsGetCurrentContext()!
+        self.layer.renderInContext(context)
+        let screenShot: UIImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        let TwitterText = "#ItIsFinished"
+        delegate?.showSharingWithImageAndText(screenShot, text: TwitterText)
+
+    }
+
+
     func showProfile() {
+        delegate?.selectedUser = postUser
         delegate?.showProfile()
     }
 
