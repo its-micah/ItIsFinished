@@ -48,11 +48,12 @@ import UIKit
             newLib.user = PFUser.currentUser() as! User
             newLib.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                 if success {
-                    SVProgressHUD.show()
+                    //SVProgressHUD.show()
                     print("MadLib saved")
                     self.tabBarController?.selectedIndex = 0
                     let firstNavController = self.tabBarController?.selectedViewController as! UINavigationController
                     firstNavController.popToRootViewControllerAnimated(true)
+                    self.dismissViewControllerAnimated(true, completion: nil)
                 } else {
                     print("\(error?.debugDescription)")
                 }
