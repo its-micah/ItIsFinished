@@ -59,10 +59,11 @@
 		C75F0FCD1BE42C5C00E6CF6E /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75F0FCC1BE42C5C00E6CF6E /* Twitter.framework */; };
 		C75F0FCF1BE42C6E00E6CF6E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75F0FCE1BE42C6E00E6CF6E /* Social.framework */; };
 		C75F0FD11BE42C7500E6CF6E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75F0FD01BE42C7500E6CF6E /* Accounts.framework */; };
-		C77385281BDF1A0600A86E51 /* DataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77385271BDF1A0600A86E51 /* DataProtocol.swift */; };
 		C773852A1BDF1B6700A86E51 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77385291BDF1B6700A86E51 /* SearchCell.swift */; };
 		C7975D8C1BE03DD600EF601B /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7975D8B1BE03DD600EF601B /* ProfileHeaderView.xib */; };
 		C7975D8E1BE1494F00EF601B /* ProfileHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7975D8D1BE1494F00EF601B /* ProfileHeaderReusableView.swift */; };
+		C7FB976D1BF1080000F99EBF /* QuoteOfDayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7FB976C1BF1080000F99EBF /* QuoteOfDayView.xib */; };
+		C7FB976F1BF1091900F99EBF /* QuoteOfDayReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB976E1BF1091900F99EBF /* QuoteOfDayReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,10 +125,11 @@
 		C75F0FCC1BE42C5C00E6CF6E /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		C75F0FCE1BE42C6E00E6CF6E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		C75F0FD01BE42C7500E6CF6E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		C77385271BDF1A0600A86E51 /* DataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocol.swift; sourceTree = "<group>"; };
 		C77385291BDF1B6700A86E51 /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		C7975D8B1BE03DD600EF601B /* ProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
 		C7975D8D1BE1494F00EF601B /* ProfileHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderReusableView.swift; sourceTree = "<group>"; };
+		C7FB976C1BF1080000F99EBF /* QuoteOfDayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuoteOfDayView.xib; sourceTree = "<group>"; };
+		C7FB976E1BF1091900F99EBF /* QuoteOfDayReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteOfDayReusableView.swift; sourceTree = "<group>"; };
 		F06F3CE5CA37E9CCF98E8043 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F69099205E343DE97A13EB87 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,15 +170,14 @@
 		75C74E101BD9304D0012297E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				753F3A521BD6BE68001CD7E8 /* MLTabBarController.swift */,
 				81BA814C1A49DA1800E65899 /* LoginViewController.swift */,
-				753F3A491BD6872E001CD7E8 /* CreateLibViewController.swift */,
-				753F3A5F1BD6D92A001CD7E8 /* FeedViewController.swift */,
 				75C74E0A1BD7F7930012297E /* ProfileInfoViewController.swift */,
-				75C74E0C1BD83F890012297E /* ProfileViewController.swift */,
-				75C74E0E1BD929E60012297E /* SearchViewController.swift */,
+				753F3A521BD6BE68001CD7E8 /* MLTabBarController.swift */,
+				753F3A5F1BD6D92A001CD7E8 /* FeedViewController.swift */,
+				753F3A491BD6872E001CD7E8 /* CreateLibViewController.swift */,
 				75C74E131BD93AA60012297E /* LibsListViewController.swift */,
-				C75CBBFD1BDADE68004D03A2 /* UIImageExtensions.swift */,
+				75C74E0E1BD929E60012297E /* SearchViewController.swift */,
+				75C74E0C1BD83F890012297E /* ProfileViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -184,6 +185,7 @@
 		814C3AC51B69877600E307BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C7B49E911BF3E2240034C172 /* Fonts */,
 				C75CBC041BDD5450004D03A2 /* IQKeyboardManagerSwift */,
 				814C3AC81B69877600E307BB /* Images.xcassets */,
 				814C3AC91B69877600E307BB /* Info.plist */,
@@ -215,14 +217,13 @@
 		81BA81471A49DA1800E65899 /* ParseStarterProject */ = {
 			isa = PBXGroup;
 			children = (
-				C756FC761BE2C70900E28FFD /* Gotham-Book.otf */,
-				C756FC781BE2CE0800E28FFD /* Gotham-Light.otf */,
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
 				C7DEA7D51BD998C6003FF4BF /* Models */,
 				75C74E101BD9304D0012297E /* ViewControllers */,
 				C7DEA7D61BD998EC003FF4BF /* Views */,
 				753F3A4D1BD69015001CD7E8 /* MadLibManager.swift */,
 				C756FC741BE2B81D00E28FFD /* NetworkManager.swift */,
+				C7B49E921BF3E2B40034C172 /* Extensions */,
 				814C3AC61B69877600E307BB /* Main.storyboard */,
 				753F3A501BD69CC0001CD7E8 /* BridgingHeader.m */,
 				753F3A4F1BD69CBF001CD7E8 /* ParseStarterProject-Swift-Bridging-Header.h */,
@@ -323,13 +324,30 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		C7B49E911BF3E2240034C172 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C756FC761BE2C70900E28FFD /* Gotham-Book.otf */,
+				C756FC781BE2CE0800E28FFD /* Gotham-Light.otf */,
+			);
+			name = Fonts;
+			path = ../ParseStarterProject;
+			sourceTree = "<group>";
+		};
+		C7B49E921BF3E2B40034C172 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C75CBBFD1BDADE68004D03A2 /* UIImageExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		C7DEA7D51BD998C6003FF4BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				75C74E111BD933650012297E /* Quotes.plist */,
 				751DEF221BD593D600E96230 /* User.swift */,
 				753F3A4B1BD687C8001CD7E8 /* MadLib.swift */,
-				C77385271BDF1A0600A86E51 /* DataProtocol.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -342,6 +360,8 @@
 				753F3A611BD6DB25001CD7E8 /* FeedCell.swift */,
 				C7975D8B1BE03DD600EF601B /* ProfileHeaderView.xib */,
 				C7975D8D1BE1494F00EF601B /* ProfileHeaderReusableView.swift */,
+				C7FB976C1BF1080000F99EBF /* QuoteOfDayView.xib */,
+				C7FB976E1BF1091900F99EBF /* QuoteOfDayReusableView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -419,6 +439,7 @@
 				C75CBC281BDD5450004D03A2 /* Info.plist in Resources */,
 				C7975D8C1BE03DD600EF601B /* ProfileHeaderView.xib in Resources */,
 				75C74E121BD933650012297E /* Quotes.plist in Resources */,
+				C7FB976D1BF1080000F99EBF /* QuoteOfDayView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,11 +535,11 @@
 				C75CBC221BDD5450004D03A2 /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				C75CBC1A1BDD5450004D03A2 /* IQNSArray+Sort.swift in Sources */,
 				C75CBC201BDD5450004D03A2 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
+				C7FB976F1BF1091900F99EBF /* QuoteOfDayReusableView.swift in Sources */,
 				C756FC751BE2B81D00E28FFD /* NetworkManager.swift in Sources */,
 				C75CBC1E1BDD5450004D03A2 /* IQUIWindow+Hierarchy.swift in Sources */,
 				753F3A601BD6D92A001CD7E8 /* FeedViewController.swift in Sources */,
 				753F3A4A1BD6872E001CD7E8 /* CreateLibViewController.swift in Sources */,
-				C77385281BDF1A0600A86E51 /* DataProtocol.swift in Sources */,
 				C75CBC251BDD5450004D03A2 /* IQTitleBarButtonItem.swift in Sources */,
 				753F3A4C1BD687C8001CD7E8 /* MadLib.swift in Sources */,
 				81BA814D1A49DA1800E65899 /* LoginViewController.swift in Sources */,
