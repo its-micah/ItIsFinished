@@ -12,15 +12,16 @@ import CSStickyHeaderFlowLayout
 import Parse
 import UIKit
 
-class ProfileViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, NetworkProtocol {
+class ProfileViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, NetworkProtocol, FollowProtocol {
 
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var editButton: UIBarButtonItem!
-    var userFeedArray: Array<PFObject> = [PFObject]()
+    var userFeedArray = [PFObject]()
     let imagePicker = UIImagePickerController()
-    var tapRecog: UITapGestureRecognizer = UITapGestureRecognizer()
+    var tapRecog = UITapGestureRecognizer()
     var reusableView = ProfileHeaderReusableView()
     var previousViewController: String?
+    var bannerChanged: Bool = false
     var user: User?
 
     override func viewDidLoad() {
@@ -38,22 +39,57 @@ class ProfileViewController: UICollectionViewController, UIImagePickerController
     }
 
     override func viewWillAppear(animated: Bool) {
+
+        backButton.enabled = true
+        editButton.enabled = true
+
         if previousViewController != "FeedViewController" {
-            user = MadLibManager.sharedInstance.currentUser
+
+            user = MadLibManager.sharedInstance.currentUser!
             backButton.enabled = false
             backButton.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+
         } else {
+
             editButton.enabled = false
-            editButton.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+            editButton.tintColor = UIColor(white: 0, alpha: 0)
+
+            if user?.username == MadLibManager.sharedInstance.currentUser?.username {
+
+                user = MadLibManager.sharedInstance.currentUser!
+                editButton.enabled = true
+                editButton.tintColor = UIColor.whiteColor()
+
+            }
+
         }
 
-        NetworkManager.sharedInstance.loadUserLibsWithUser(user!)
+        if let user = user {
+            NetworkManager.sharedInstance.loadUserLibsWithUser(user)
+        } else {
+            print("no user")
+        }
+        getBannerImage()
+
+    }
+
+
+    ///-------------------------
+    /// MARK: Network Manager Delegate Method
+    ///-------------------------
+
+    func endRefresh() {
+        print("refresh ended")
     }
 
     func finishedGatheringData() {
         userFeedArray = NetworkManager.sharedInstance.userFeedArray
         self.collectionView?.reloadData()
     }
+
+    ///-------------------------
+    /// MARK: CollectionView Delegate Methods
+    ///-------------------------
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return userFeedArray.count
@@ -71,10 +107,13 @@ class ProfileViewController: UICollectionViewController, UIImagePickerController
 
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         reusableView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "header", forIndexPath: indexPath) as! ProfileHeaderReusableView
+        reusableView.delegate = self
 
-        if user == MadLibManager.sharedInstance.currentUser {
+        if user == MadLibManager.sharedInstance.currentUser! {
             tapRecog.addTarget(self, action: Selector("showImageGallery"))
             reusableView.overlayView.addGestureRecognizer(tapRecog)
+            reusableView.followView.backgroundColor = UIColor.whiteColor()
+            reusableView.followButton.hidden = true
         }
         
         reusableView.configureWithUserName(user!.username!)
@@ -88,16 +127,30 @@ class ProfileViewController: UICollectionViewController, UIImagePickerController
             })
         }
 
+        getBannerImage()
+
+
+        return reusableView
+    }
+
+    func getBannerImage() {
+
         user?.bannerPicture?.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
             if imageData != nil {
                 self.reusableView.bannerImageView.image = UIImage(data: imageData!)
+                self.bannerChanged = false
             } else {
                 print("no banner image found")
             }
         })
 
-        return reusableView
     }
+
+
+    ///-------------------------
+    /// MARK: Image Picker methods
+    ///-------------------------
+
 
     func showImageGallery() {
         print("tapped")
@@ -115,6 +168,7 @@ class ProfileViewController: UICollectionViewController, UIImagePickerController
             user?.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
                 if success {
                     print("banner image saved!")
+                    self.bannerChanged = true
                 } else {
                     print("banner image not saved")
                 }
@@ -128,6 +182,14 @@ class ProfileViewController: UICollectionViewController, UIImagePickerController
 
     @IBAction func onBackButtonTapped(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true);
+    }
+
+    func followUser() {
+        let otherUser = user
+        let follow = PFObject(className: "Follow")
+        follow.setObject(MadLibManager.sharedInstance.currentUser!, forKey: "from")
+        follow.setObject(otherUser!, forKey: "to")
+        follow.saveInBackground()
     }
     
 }
