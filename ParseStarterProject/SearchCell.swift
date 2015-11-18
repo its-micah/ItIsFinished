@@ -20,6 +20,8 @@ protocol DataProtocol {
 class SearchCell : UITableViewCell {
     
     var delegate: DataProtocol?
+    var postUser: User?
+
 
 
     func getImage(data: PFFile) {
