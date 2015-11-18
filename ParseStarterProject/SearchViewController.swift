@@ -15,6 +15,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     var searchResults = [PFObject]()
+    var selectedUser: User? = nil
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,10 +50,20 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         searchTableView.reloadData()
     }
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let profileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+        let foundUser = searchResults[indexPath.row] as! User
+        profileVC.previousViewController = "FeedViewController"
+        profileVC.user = foundUser
+        self.navigationController?.pushViewController(profileVC, animated: true)
+
+    }
+
     func queryWithString(searchText: String) {
-        let query = PFQuery.queryForUser()
-        query.whereKey("username", equalTo: searchText)
-        query.getFirstObjectInBackgroundWithBlock { (foundUser: PFObject?, error: NSError?) -> Void in
+        let query = PFUser.query()
+        query!.whereKey("username", equalTo: searchText)
+        query!.whereKey("username", containsString: searchText)
+        query!.getFirstObjectInBackgroundWithBlock { (foundUser: PFObject?, error: NSError?) -> Void in
             if foundUser != nil {
                 self.searchResults.append(foundUser!)
                 self.searchTableView.reloadData()
