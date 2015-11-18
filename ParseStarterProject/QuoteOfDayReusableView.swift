@@ -17,6 +17,7 @@ class QuoteOfDayReusableView: UICollectionReusableView {
 
         let quote = MadLibManager.sharedInstance.getQuoteOfDay()
         let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .Center
         paragraphStyle.lineSpacing = 8
 
         let attrString = NSMutableAttributedString(string: quote)
