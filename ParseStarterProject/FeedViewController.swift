@@ -48,6 +48,7 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
 
     func refresh() {
         NetworkManager.sharedInstance.loadFollowingLibs()
+        NetworkManager.sharedInstance.loadQuoteOfDay()
     }
 
     func endRefresh() {
@@ -66,10 +67,9 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
             animateEmptyFeedView()
         }
 
-
     }
 
-    
+
     func animateEmptyFeedView() {
         UIView.animateWithDuration(0.4, animations: { () -> Void in
             self.emptyFeedView.alpha = 1.0
@@ -99,8 +99,10 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
 
     func showCreateLib() {
         print("tapped")
+
         let createLibVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CreateLibVC") as! CreateLibViewController
         createLibVC.libText = MadLibManager.sharedInstance.quoteOfDay
+
         self.navigationController?.pushViewController(createLibVC, animated: true)
     }
 

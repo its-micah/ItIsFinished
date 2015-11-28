@@ -30,7 +30,7 @@ class MadLibManager {
 
 
     func getQuoteOfDay() -> String {
-        quoteOfDay = NetworkManager.sharedInstance.loadQuoteOfDay()
+        quoteOfDay = NetworkManager.sharedInstance.getQuoteOfDay()
         return quoteOfDay!
     }
 
