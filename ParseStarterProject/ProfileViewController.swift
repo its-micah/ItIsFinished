@@ -153,31 +153,32 @@ class ProfileViewController: UICollectionViewController, UIImagePickerController
 
 
     func showImageGallery() {
-        print("tapped")
-        imagePicker.sourceType = .PhotoLibrary
-        presentViewController(imagePicker, animated: true, completion: nil)
+//        print("tapped")
+//        imagePicker.sourceType = .PhotoLibrary
+//        presentViewController(imagePicker, animated: true, completion: nil)
+        ImagePickerController(presentingViewController: self, imageView: reusableView.bannerImageView).present()
     }
 
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            reusableView.bannerImageView.contentMode = .ScaleAspectFill
-            reusableView.bannerImageView.image = pickedImage
-            let imageData = reusableView.bannerImageView.image!.lowestQualityJPEGNSData
-            let imageFile = PFFile(name: "bannerImage.jpg", data: imageData)
-            user?.bannerPicture = imageFile
-            user?.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
-                if success {
-                    print("banner image saved!")
-                    self.bannerChanged = true
-                } else {
-                    print("banner image not saved")
-                }
-            })
-
-        }
-
-        dismissViewControllerAnimated(true, completion: nil)
-    }
+//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+//        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+//            reusableView.bannerImageView.contentMode = .ScaleAspectFill
+//            reusableView.bannerImageView.image = pickedImage
+//            let imageData = reusableView.bannerImageView.image!.lowestQualityJPEGNSData
+//            let imageFile = PFFile(name: "bannerImage.jpg", data: imageData)
+//            user?.bannerPicture = imageFile
+//            user?.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+//                if success {
+//                    print("banner image saved!")
+//                    self.bannerChanged = true
+//                } else {
+//                    print("banner image not saved")
+//                }
+//            })
+//
+//        }
+//
+//        dismissViewControllerAnimated(true, completion: nil)
+//    }
 
 
     @IBAction func onBackButtonTapped(sender: AnyObject) {
