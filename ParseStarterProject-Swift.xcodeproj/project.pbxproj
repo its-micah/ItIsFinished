@@ -34,6 +34,10 @@
 		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
 		A53BA492E2975F3D47EFCE77 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F06F3CE5CA37E9CCF98E8043 /* Pods.framework */; };
+		C74E0F621BFCDDB400BDBBFF /* Tungsten-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = C74E0F5E1BFCDD9800BDBBFF /* Tungsten-Black.otf */; };
+		C74E0F631BFCDDB400BDBBFF /* Tungsten-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C74E0F5F1BFCDD9800BDBBFF /* Tungsten-Bold.otf */; };
+		C74E0F641BFCDDB400BDBBFF /* Tungsten-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C74E0F601BFCDD9800BDBBFF /* Tungsten-Medium.otf */; };
+		C74E0F651BFCDDB400BDBBFF /* Tungsten-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C74E0F611BFCDD9800BDBBFF /* Tungsten-Semibold.otf */; };
 		C756FC751BE2B81D00E28FFD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C756FC741BE2B81D00E28FFD /* NetworkManager.swift */; };
 		C756FC771BE2C72E00E28FFD /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = C756FC761BE2C70900E28FFD /* Gotham-Book.otf */; };
 		C756FC791BE2CE1100E28FFD /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C756FC781BE2CE0800E28FFD /* Gotham-Light.otf */; };
@@ -64,6 +68,7 @@
 		C7975D8E1BE1494F00EF601B /* ProfileHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7975D8D1BE1494F00EF601B /* ProfileHeaderReusableView.swift */; };
 		C7FB976D1BF1080000F99EBF /* QuoteOfDayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7FB976C1BF1080000F99EBF /* QuoteOfDayView.xib */; };
 		C7FB976F1BF1091900F99EBF /* QuoteOfDayReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB976E1BF1091900F99EBF /* QuoteOfDayReusableView.swift */; };
+		C7FF7C891C05033E00696E7F /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FF7C881C05033E00696E7F /* ImagePickerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +105,10 @@
 		81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		C74E0F5E1BFCDD9800BDBBFF /* Tungsten-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tungsten-Black.otf"; sourceTree = "<group>"; };
+		C74E0F5F1BFCDD9800BDBBFF /* Tungsten-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tungsten-Bold.otf"; sourceTree = "<group>"; };
+		C74E0F601BFCDD9800BDBBFF /* Tungsten-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tungsten-Medium.otf"; sourceTree = "<group>"; };
+		C74E0F611BFCDD9800BDBBFF /* Tungsten-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tungsten-Semibold.otf"; sourceTree = "<group>"; };
 		C756FC741BE2B81D00E28FFD /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C756FC761BE2C70900E28FFD /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
 		C756FC781BE2CE0800E28FFD /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
@@ -130,6 +139,7 @@
 		C7975D8D1BE1494F00EF601B /* ProfileHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderReusableView.swift; sourceTree = "<group>"; };
 		C7FB976C1BF1080000F99EBF /* QuoteOfDayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuoteOfDayView.xib; sourceTree = "<group>"; };
 		C7FB976E1BF1091900F99EBF /* QuoteOfDayReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteOfDayReusableView.swift; sourceTree = "<group>"; };
+		C7FF7C881C05033E00696E7F /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		F06F3CE5CA37E9CCF98E8043 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F69099205E343DE97A13EB87 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +188,7 @@
 				75C74E131BD93AA60012297E /* LibsListViewController.swift */,
 				75C74E0E1BD929E60012297E /* SearchViewController.swift */,
 				75C74E0C1BD83F890012297E /* ProfileViewController.swift */,
+				C7FF7C881C05033E00696E7F /* ImagePickerController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -327,6 +338,10 @@
 		C7B49E911BF3E2240034C172 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				C74E0F5E1BFCDD9800BDBBFF /* Tungsten-Black.otf */,
+				C74E0F5F1BFCDD9800BDBBFF /* Tungsten-Bold.otf */,
+				C74E0F601BFCDD9800BDBBFF /* Tungsten-Medium.otf */,
+				C74E0F611BFCDD9800BDBBFF /* Tungsten-Semibold.otf */,
 				C756FC761BE2C70900E28FFD /* Gotham-Book.otf */,
 				C756FC781BE2CE0800E28FFD /* Gotham-Light.otf */,
 			);
@@ -430,6 +445,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C74E0F621BFCDDB400BDBBFF /* Tungsten-Black.otf in Resources */,
+				C74E0F631BFCDDB400BDBBFF /* Tungsten-Bold.otf in Resources */,
+				C74E0F641BFCDDB400BDBBFF /* Tungsten-Medium.otf in Resources */,
+				C74E0F651BFCDDB400BDBBFF /* Tungsten-Semibold.otf in Resources */,
 				C756FC791BE2CE1100E28FFD /* Gotham-Light.otf in Resources */,
 				C756FC771BE2C72E00E28FFD /* Gotham-Book.otf in Resources */,
 				753F3A5E1BD6D588001CD7E8 /* LaunchScreen.storyboard in Resources */,
@@ -537,6 +556,7 @@
 				C75CBC201BDD5450004D03A2 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				C7FB976F1BF1091900F99EBF /* QuoteOfDayReusableView.swift in Sources */,
 				C756FC751BE2B81D00E28FFD /* NetworkManager.swift in Sources */,
+				C7FF7C891C05033E00696E7F /* ImagePickerController.swift in Sources */,
 				C75CBC1E1BDD5450004D03A2 /* IQUIWindow+Hierarchy.swift in Sources */,
 				753F3A601BD6D92A001CD7E8 /* FeedViewController.swift in Sources */,
 				753F3A4A1BD6872E001CD7E8 /* CreateLibViewController.swift in Sources */,

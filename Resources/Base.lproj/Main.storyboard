@@ -22,10 +22,12 @@
             <string>Gotham-Book</string>
             <string>Gotham-Book</string>
             <string>Gotham-Book</string>
-            <string>Gotham-Book</string>
         </mutableArray>
         <mutableArray key="Gotham-Light.otf">
             <string>Gotham-Light</string>
+        </mutableArray>
+        <mutableArray key="Tungsten-Semibold.otf">
+            <string>Tungsten-Semibold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -265,13 +267,13 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nim-WS-dX7">
                                 <rect key="frame" x="160" y="335" width="280" height="47"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.92941176469999998" green="0.68235294120000001" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="7nF-cC-zxJ"/>
                                     <constraint firstAttribute="width" constant="280" id="t5X-u1-Cst"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
-                                <state key="normal" title="IT IS FINISHED">
+                                <fontDescription key="fontDescription" name="Tungsten-Semibold" family="Tungsten" pointSize="23"/>
+                                <state key="normal" title="IT IS FINISHED!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -426,7 +428,7 @@
                                     <constraint firstAttribute="width" constant="366" id="ttf-8y-mL3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -509,7 +511,7 @@
             </objects>
             <point key="canvasLocation" x="2082" y="2981"/>
         </scene>
-        <!--It Is Finished-->
+        <!--Feed View Controller-->
         <scene sceneID="bw9-mZ-38t">
             <objects>
                 <viewController id="XyV-Kd-3A5" customClass="FeedViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
@@ -559,6 +561,15 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button hidden="YES" opaque="NO" alpha="0.20000000000000001" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1h-22-ih6">
+                                                    <rect key="frame" x="361" y="262" width="14" height="27"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="27" id="PHI-rg-RoU"/>
+                                                        <constraint firstAttribute="width" constant="14" id="qUO-8a-u85"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="exclamtion"/>
+                                                </button>
                                                 <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uc9-HL-jYx">
                                                     <rect key="frame" x="406" y="262" width="30" height="27"/>
                                                     <animations/>
@@ -593,8 +604,10 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="uc9-HL-jYx" secondAttribute="trailing" constant="5" id="9CD-QP-hAj"/>
                                             <constraint firstItem="cQr-kx-VwB" firstAttribute="centerY" secondItem="tpf-R8-VE6" secondAttribute="centerY" id="Bze-Lj-iCJ"/>
                                             <constraint firstItem="cQr-kx-VwB" firstAttribute="trailing" secondItem="Kon-sa-K4Y" secondAttribute="trailingMargin" id="CcZ-Hw-Ec6"/>
+                                            <constraint firstItem="uc9-HL-jYx" firstAttribute="leading" secondItem="L1h-22-ih6" secondAttribute="trailing" constant="31" id="IuN-OH-2Og"/>
                                             <constraint firstItem="tpf-R8-VE6" firstAttribute="leading" secondItem="Kon-sa-K4Y" secondAttribute="leadingMargin" id="L8A-Q5-YrP"/>
                                             <constraint firstItem="1sO-Ka-Bt8" firstAttribute="top" secondItem="tpf-R8-VE6" secondAttribute="bottom" constant="13" id="PaY-8x-lXI"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="L1h-22-ih6" secondAttribute="bottom" constant="4" id="anq-j6-9Il"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="uc9-HL-jYx" secondAttribute="bottom" constant="4" id="bZa-Yw-cI7"/>
                                             <constraint firstItem="cQr-kx-VwB" firstAttribute="leading" secondItem="tpf-R8-VE6" secondAttribute="trailing" constant="13" id="daG-aS-tYi"/>
                                             <constraint firstItem="1sO-Ka-Bt8" firstAttribute="leading" secondItem="Kon-sa-K4Y" secondAttribute="leadingMargin" constant="10" id="eds-Ct-sXj"/>
@@ -618,7 +631,7 @@
                                     <outlet property="delegate" destination="XyV-Kd-3A5" id="9mo-J3-aFM"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUZ-hQ-JP7">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUZ-hQ-JP7">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No blanks to show :(" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDu-3r-xyI">
@@ -654,7 +667,7 @@
                             <constraint firstAttribute="trailing" secondItem="YUZ-hQ-JP7" secondAttribute="trailing" id="a0I-03-1IX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="It Is Finished" id="NXf-ye-7YQ"/>
+                    <navigationItem key="navigationItem" id="NXf-ye-7YQ"/>
                     <connections>
                         <outlet property="emptyFeedView" destination="YUZ-hQ-JP7" id="NYW-mG-HEr"/>
                         <outlet property="feedCollectionView" destination="xJe-Kg-iMw" id="VOY-3b-s0A"/>
@@ -938,6 +951,7 @@
     </scenes>
     <resources>
         <image name="backButton" width="24" height="17"/>
+        <image name="exclamtion" width="22" height="92"/>
         <image name="home" width="30" height="30"/>
         <image name="logout" width="25" height="25"/>
         <image name="profile-1" width="17" height="25"/>
