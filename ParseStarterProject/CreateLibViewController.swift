@@ -49,6 +49,9 @@ import UIKit
             newLib.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                 if success {
                     //SVProgressHUD.show()
+
+                    //Look into ViewModel here
+
                     print("MadLib saved")
                     self.tabBarController?.selectedIndex = 0
                     let firstNavController = self.tabBarController?.selectedViewController as! UINavigationController
