@@ -7,7 +7,6 @@
     <customFonts key="customFonts">
         <mutableArray key="Gotham-Book.otf">
             <string>Gotham-Book</string>
-            <string>Gotham-Book</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -17,45 +16,46 @@
             <rect key="frame" x="0.0" y="0.0" width="330" height="213"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXl-jQ-AaH">
-                    <rect key="frame" x="15" y="44" width="301" height="132"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hd-Se-CpN">
+                    <rect key="frame" x="10" y="13" width="310" height="187"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elvis has left the..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXl-jQ-AaH">
+                            <rect key="frame" x="12" y="15" width="287" height="158"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="24"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quoteMarks" translatesAutoresizingMaskIntoConstraints="NO" id="fuF-aL-vpM">
+                            <rect key="frame" x="10" y="8" width="30" height="30"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="5OC-qW-q5Y"/>
+                                <constraint firstAttribute="width" constant="30" id="Er0-Re-eug"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
                     <animations/>
-                    <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="22"/>
-                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VlV-95-bX7">
-                    <rect key="frame" x="0.0" y="200" width="330" height="13"/>
-                    <animations/>
-                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.59999999999999998" green="0.63921568630000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="13" id="U9k-yQ-CPL"/>
+                        <constraint firstItem="wXl-jQ-AaH" firstAttribute="leading" secondItem="9hd-Se-CpN" secondAttribute="leading" constant="12" id="2M0-lD-csH"/>
+                        <constraint firstItem="wXl-jQ-AaH" firstAttribute="centerX" secondItem="9hd-Se-CpN" secondAttribute="centerX" id="3Kn-y9-Kcb"/>
+                        <constraint firstItem="wXl-jQ-AaH" firstAttribute="centerY" secondItem="9hd-Se-CpN" secondAttribute="centerY" id="8vU-zT-hce"/>
+                        <constraint firstItem="fuF-aL-vpM" firstAttribute="top" secondItem="9hd-Se-CpN" secondAttribute="top" constant="8" id="GOD-d1-Xga"/>
+                        <constraint firstItem="wXl-jQ-AaH" firstAttribute="top" secondItem="9hd-Se-CpN" secondAttribute="top" constant="15" id="JNl-Rt-cY0"/>
+                        <constraint firstAttribute="trailing" secondItem="wXl-jQ-AaH" secondAttribute="trailing" constant="11" id="RRk-7e-anC"/>
+                        <constraint firstAttribute="bottom" secondItem="wXl-jQ-AaH" secondAttribute="bottom" constant="14.5" id="pma-cn-FMK"/>
+                        <constraint firstItem="fuF-aL-vpM" firstAttribute="leading" secondItem="9hd-Se-CpN" secondAttribute="leading" constant="10" id="sDi-27-ng4"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote of the Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7W-Gl-5mo">
-                    <rect key="frame" x="12" y="15" width="307" height="21"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="Gu1-yo-OFf"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="VlV-95-bX7" secondAttribute="bottom" id="Dyu-J1-KhR"/>
-                <constraint firstAttribute="trailing" secondItem="e7W-Gl-5mo" secondAttribute="trailing" constant="11" id="Gwm-oP-Gd2"/>
-                <constraint firstItem="wXl-jQ-AaH" firstAttribute="top" secondItem="e7W-Gl-5mo" secondAttribute="bottom" constant="8" id="a40-mD-Fqn"/>
-                <constraint firstAttribute="trailing" secondItem="VlV-95-bX7" secondAttribute="trailing" id="dHX-i2-Q5x"/>
-                <constraint firstItem="VlV-95-bX7" firstAttribute="leading" secondItem="sx0-Ih-YgB" secondAttribute="leading" id="ftD-ss-pWP"/>
-                <constraint firstItem="e7W-Gl-5mo" firstAttribute="top" secondItem="sx0-Ih-YgB" secondAttribute="top" constant="15" id="hrY-3o-sRL"/>
-                <constraint firstItem="e7W-Gl-5mo" firstAttribute="leading" secondItem="sx0-Ih-YgB" secondAttribute="leading" constant="12" id="jaZ-hz-BB1"/>
-                <constraint firstAttribute="bottom" secondItem="wXl-jQ-AaH" secondAttribute="bottom" constant="37" id="l4y-pv-CKs"/>
-                <constraint firstAttribute="trailing" secondItem="wXl-jQ-AaH" secondAttribute="trailing" constant="14" id="rIk-eo-Gc0"/>
-                <constraint firstItem="wXl-jQ-AaH" firstAttribute="leading" secondItem="sx0-Ih-YgB" secondAttribute="leading" constant="15" id="z1c-aV-RJX"/>
+                <constraint firstAttribute="bottom" secondItem="9hd-Se-CpN" secondAttribute="bottom" constant="13" id="7Fj-fX-ZBy"/>
+                <constraint firstItem="9hd-Se-CpN" firstAttribute="leading" secondItem="sx0-Ih-YgB" secondAttribute="leading" constant="10" id="Tff-E5-lKZ"/>
+                <constraint firstItem="9hd-Se-CpN" firstAttribute="top" secondItem="sx0-Ih-YgB" secondAttribute="top" constant="13" id="Voh-gQ-Vz8"/>
+                <constraint firstAttribute="trailing" secondItem="9hd-Se-CpN" secondAttribute="trailing" constant="10" id="ZP4-NM-hXB"/>
             </constraints>
             <connections>
                 <outlet property="quoteOfDayLabel" destination="wXl-jQ-AaH" id="7jA-sN-xD9"/>
@@ -63,4 +63,7 @@
             <point key="canvasLocation" x="305" y="378.5"/>
         </collectionReusableView>
     </objects>
+    <resources>
+        <image name="quoteMarks" width="107" height="76"/>
+    </resources>
 </document>
