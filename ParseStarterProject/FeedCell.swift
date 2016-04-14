@@ -65,7 +65,7 @@ class FeedCell: UICollectionViewCell {
     }
 
     func configureWithImage(image: PFFile) {
-        userImageView.image = UIImage(named: "profile-1")
+        userImageView.image = UIImage(named: "placeholderPic")
         userImageView.file = image
         userImageView.loadInBackground()
     }
