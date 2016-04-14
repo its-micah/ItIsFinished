@@ -192,7 +192,7 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         let reusableView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "quoteOfDay", forIndexPath: indexPath) as! QuoteOfDayReusableView
         reusableView.configureWithQuote()
-        tapRecog.addTarget(self, action: Selector("showCreateLib"))
+        tapRecog.addTarget(self, action: #selector(FeedViewController.showCreateLib))
         reusableView.addGestureRecognizer(tapRecog)
         return reusableView
     }
