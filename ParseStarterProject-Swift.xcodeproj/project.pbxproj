@@ -19,14 +19,12 @@
 		753F3A621BD6DB25001CD7E8 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753F3A611BD6DB25001CD7E8 /* FeedCell.swift */; };
 		75C74E0B1BD7F7930012297E /* ProfileInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C74E0A1BD7F7930012297E /* ProfileInfoViewController.swift */; };
 		75C74E0D1BD83F890012297E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C74E0C1BD83F890012297E /* ProfileViewController.swift */; };
-		75C74E0F1BD929E60012297E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C74E0E1BD929E60012297E /* SearchViewController.swift */; };
 		75C74E121BD933650012297E /* Quotes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75C74E111BD933650012297E /* Quotes.plist */; };
 		75C74E141BD93AA60012297E /* LibsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C74E131BD93AA60012297E /* LibsListViewController.swift */; };
 		75C74E161BD9459F0012297E /* LibListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C74E151BD9459F0012297E /* LibListCell.swift */; };
 		814C3ACA1B69877600E307BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC61B69877600E307BB /* Main.storyboard */; };
 		814C3ACB1B69877600E307BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC81B69877600E307BB /* Images.xcassets */; };
 		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
-		81BA814D1A49DA1800E65899 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814C1A49DA1800E65899 /* LoginViewController.swift */; };
 		81BA81701A49DB6800E65899 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA816B1A49DB6800E65899 /* Bolts.framework */; };
 		81BA81711A49DB6800E65899 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA816C1A49DB6800E65899 /* Parse.framework */; };
 		81BA81771A49E0D500E65899 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81761A49E0D500E65899 /* libsqlite3.dylib */; };
@@ -38,6 +36,11 @@
 		C74E0F631BFCDDB400BDBBFF /* Tungsten-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C74E0F5F1BFCDD9800BDBBFF /* Tungsten-Bold.otf */; };
 		C74E0F641BFCDDB400BDBBFF /* Tungsten-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C74E0F601BFCDD9800BDBBFF /* Tungsten-Medium.otf */; };
 		C74E0F651BFCDDB400BDBBFF /* Tungsten-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C74E0F611BFCDD9800BDBBFF /* Tungsten-Semibold.otf */; };
+		C7507A231C4ACEF70087AD0D /* TypeTogether - Eskapade-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7507A211C4ACEE80087AD0D /* TypeTogether - Eskapade-Regular.otf */; };
+		C7507A241C4ACEF80087AD0D /* TypeTogether - EskapadeFraktur.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7507A221C4ACEE80087AD0D /* TypeTogether - EskapadeFraktur.otf */; };
+		C7507A261C4AD75F0087AD0D /* IIFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7507A251C4AD75F0087AD0D /* IIFButton.swift */; };
+		C7567EDB1C29AFA600D67178 /* exljbris - MuseoSlab-500.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7567EDA1C29AF7F00D67178 /* exljbris - MuseoSlab-500.otf */; };
+		C7567EDF1C29B20F00D67178 /* ArcherPro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7567EDE1C29B20F00D67178 /* ArcherPro-Book.otf */; };
 		C756FC751BE2B81D00E28FFD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C756FC741BE2B81D00E28FFD /* NetworkManager.swift */; };
 		C756FC771BE2C72E00E28FFD /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = C756FC761BE2C70900E28FFD /* Gotham-Book.otf */; };
 		C756FC791BE2CE1100E28FFD /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C756FC781BE2CE0800E28FFD /* Gotham-Light.otf */; };
@@ -60,12 +63,16 @@
 		C75CBC271BDD5450004D03A2 /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75CBC161BDD5450004D03A2 /* IQUIView+IQKeyboardToolbar.swift */; };
 		C75CBC281BDD5450004D03A2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C75CBC181BDD5450004D03A2 /* Info.plist */; };
 		C75CBC291BDD5450004D03A2 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C75CBC191BDD5450004D03A2 /* IQKeyboardManager.bundle */; };
+		C75E7C141C4C0C8C00E956F0 /* savedQuoteAnimationImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C75E7C131C4C0C8C00E956F0 /* savedQuoteAnimationImages.xcassets */; };
 		C75F0FCD1BE42C5C00E6CF6E /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75F0FCC1BE42C5C00E6CF6E /* Twitter.framework */; };
 		C75F0FCF1BE42C6E00E6CF6E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75F0FCE1BE42C6E00E6CF6E /* Social.framework */; };
 		C75F0FD11BE42C7500E6CF6E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75F0FD01BE42C7500E6CF6E /* Accounts.framework */; };
 		C773852A1BDF1B6700A86E51 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77385291BDF1B6700A86E51 /* SearchCell.swift */; };
+		C794E4D21C4BF764004BFA85 /* CustomNavigationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C794E4D11C4BF764004BFA85 /* CustomNavigationAnimationController.swift */; };
 		C7975D8C1BE03DD600EF601B /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7975D8B1BE03DD600EF601B /* ProfileHeaderView.xib */; };
 		C7975D8E1BE1494F00EF601B /* ProfileHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7975D8D1BE1494F00EF601B /* ProfileHeaderReusableView.swift */; };
+		C7B4AE3B1C5129C400D45AA1 /* thunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C7B4AE3A1C5129C400D45AA1 /* thunder.mp3 */; };
+		C7E06DF31C0FCE9400EE25C0 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E06DF21C0FCE9400EE25C0 /* Quote.swift */; };
 		C7FB976D1BF1080000F99EBF /* QuoteOfDayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7FB976C1BF1080000F99EBF /* QuoteOfDayView.xib */; };
 		C7FB976F1BF1091900F99EBF /* QuoteOfDayReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB976E1BF1091900F99EBF /* QuoteOfDayReusableView.swift */; };
 		C7FF7C891C05033E00696E7F /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FF7C881C05033E00696E7F /* ImagePickerController.swift */; };
@@ -86,7 +93,6 @@
 		753F3A611BD6DB25001CD7E8 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		75C74E0A1BD7F7930012297E /* ProfileInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewController.swift; sourceTree = "<group>"; };
 		75C74E0C1BD83F890012297E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		75C74E0E1BD929E60012297E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		75C74E111BD933650012297E /* Quotes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Quotes.plist; sourceTree = "<group>"; };
 		75C74E131BD93AA60012297E /* LibsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibsListViewController.swift; sourceTree = "<group>"; };
 		75C74E151BD9459F0012297E /* LibListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibListCell.swift; sourceTree = "<group>"; };
@@ -95,7 +101,6 @@
 		814C3AC91B69877600E307BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81BA81451A49DA1800E65899 /* ParseStarterProject-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ParseStarterProject-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BA814A1A49DA1800E65899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		81BA814C1A49DA1800E65899 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		81BA816B1A49DB6800E65899 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		81BA816C1A49DB6800E65899 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		81BA816D1A49DB6800E65899 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -109,6 +114,11 @@
 		C74E0F5F1BFCDD9800BDBBFF /* Tungsten-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tungsten-Bold.otf"; sourceTree = "<group>"; };
 		C74E0F601BFCDD9800BDBBFF /* Tungsten-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tungsten-Medium.otf"; sourceTree = "<group>"; };
 		C74E0F611BFCDD9800BDBBFF /* Tungsten-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tungsten-Semibold.otf"; sourceTree = "<group>"; };
+		C7507A211C4ACEE80087AD0D /* TypeTogether - Eskapade-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TypeTogether - Eskapade-Regular.otf"; sourceTree = "<group>"; };
+		C7507A221C4ACEE80087AD0D /* TypeTogether - EskapadeFraktur.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TypeTogether - EskapadeFraktur.otf"; sourceTree = "<group>"; };
+		C7507A251C4AD75F0087AD0D /* IIFButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IIFButton.swift; sourceTree = "<group>"; };
+		C7567EDA1C29AF7F00D67178 /* exljbris - MuseoSlab-500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "exljbris - MuseoSlab-500.otf"; sourceTree = "<group>"; };
+		C7567EDE1C29B20F00D67178 /* ArcherPro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ArcherPro-Book.otf"; sourceTree = "<group>"; };
 		C756FC741BE2B81D00E28FFD /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C756FC761BE2C70900E28FFD /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
 		C756FC781BE2CE0800E28FFD /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
@@ -131,12 +141,16 @@
 		C75CBC161BDD5450004D03A2 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		C75CBC181BDD5450004D03A2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C75CBC191BDD5450004D03A2 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		C75E7C131C4C0C8C00E956F0 /* savedQuoteAnimationImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = savedQuoteAnimationImages.xcassets; sourceTree = "<group>"; };
 		C75F0FCC1BE42C5C00E6CF6E /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		C75F0FCE1BE42C6E00E6CF6E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		C75F0FD01BE42C7500E6CF6E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C77385291BDF1B6700A86E51 /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		C794E4D11C4BF764004BFA85 /* CustomNavigationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationAnimationController.swift; sourceTree = "<group>"; };
 		C7975D8B1BE03DD600EF601B /* ProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
 		C7975D8D1BE1494F00EF601B /* ProfileHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderReusableView.swift; sourceTree = "<group>"; };
+		C7B4AE3A1C5129C400D45AA1 /* thunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thunder.mp3; sourceTree = "<group>"; };
+		C7E06DF21C0FCE9400EE25C0 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		C7FB976C1BF1080000F99EBF /* QuoteOfDayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuoteOfDayView.xib; sourceTree = "<group>"; };
 		C7FB976E1BF1091900F99EBF /* QuoteOfDayReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteOfDayReusableView.swift; sourceTree = "<group>"; };
 		C7FF7C881C05033E00696E7F /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
@@ -180,15 +194,14 @@
 		75C74E101BD9304D0012297E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				81BA814C1A49DA1800E65899 /* LoginViewController.swift */,
 				75C74E0A1BD7F7930012297E /* ProfileInfoViewController.swift */,
 				753F3A521BD6BE68001CD7E8 /* MLTabBarController.swift */,
 				753F3A5F1BD6D92A001CD7E8 /* FeedViewController.swift */,
 				753F3A491BD6872E001CD7E8 /* CreateLibViewController.swift */,
 				75C74E131BD93AA60012297E /* LibsListViewController.swift */,
-				75C74E0E1BD929E60012297E /* SearchViewController.swift */,
 				75C74E0C1BD83F890012297E /* ProfileViewController.swift */,
 				C7FF7C881C05033E00696E7F /* ImagePickerController.swift */,
+				C794E4D11C4BF764004BFA85 /* CustomNavigationAnimationController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -196,10 +209,12 @@
 		814C3AC51B69877600E307BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C7B4AE3A1C5129C400D45AA1 /* thunder.mp3 */,
 				C7B49E911BF3E2240034C172 /* Fonts */,
 				C75CBC041BDD5450004D03A2 /* IQKeyboardManagerSwift */,
 				814C3AC81B69877600E307BB /* Images.xcassets */,
 				814C3AC91B69877600E307BB /* Info.plist */,
+				C75E7C131C4C0C8C00E956F0 /* savedQuoteAnimationImages.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -338,6 +353,10 @@
 		C7B49E911BF3E2240034C172 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				C7507A211C4ACEE80087AD0D /* TypeTogether - Eskapade-Regular.otf */,
+				C7507A221C4ACEE80087AD0D /* TypeTogether - EskapadeFraktur.otf */,
+				C7567EDE1C29B20F00D67178 /* ArcherPro-Book.otf */,
+				C7567EDA1C29AF7F00D67178 /* exljbris - MuseoSlab-500.otf */,
 				C74E0F5E1BFCDD9800BDBBFF /* Tungsten-Black.otf */,
 				C74E0F5F1BFCDD9800BDBBFF /* Tungsten-Bold.otf */,
 				C74E0F601BFCDD9800BDBBFF /* Tungsten-Medium.otf */,
@@ -363,6 +382,7 @@
 				75C74E111BD933650012297E /* Quotes.plist */,
 				751DEF221BD593D600E96230 /* User.swift */,
 				753F3A4B1BD687C8001CD7E8 /* MadLib.swift */,
+				C7E06DF21C0FCE9400EE25C0 /* Quote.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -377,6 +397,7 @@
 				C7975D8D1BE1494F00EF601B /* ProfileHeaderReusableView.swift */,
 				C7FB976C1BF1080000F99EBF /* QuoteOfDayView.xib */,
 				C7FB976E1BF1091900F99EBF /* QuoteOfDayReusableView.swift */,
+				C7507A251C4AD75F0087AD0D /* IIFButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -445,16 +466,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7507A231C4ACEF70087AD0D /* TypeTogether - Eskapade-Regular.otf in Resources */,
+				C7507A241C4ACEF80087AD0D /* TypeTogether - EskapadeFraktur.otf in Resources */,
+				C75E7C141C4C0C8C00E956F0 /* savedQuoteAnimationImages.xcassets in Resources */,
+				C7567EDB1C29AFA600D67178 /* exljbris - MuseoSlab-500.otf in Resources */,
 				C74E0F621BFCDDB400BDBBFF /* Tungsten-Black.otf in Resources */,
 				C74E0F631BFCDDB400BDBBFF /* Tungsten-Bold.otf in Resources */,
 				C74E0F641BFCDDB400BDBBFF /* Tungsten-Medium.otf in Resources */,
 				C74E0F651BFCDDB400BDBBFF /* Tungsten-Semibold.otf in Resources */,
+				C7B4AE3B1C5129C400D45AA1 /* thunder.mp3 in Resources */,
 				C756FC791BE2CE1100E28FFD /* Gotham-Light.otf in Resources */,
 				C756FC771BE2C72E00E28FFD /* Gotham-Book.otf in Resources */,
 				753F3A5E1BD6D588001CD7E8 /* LaunchScreen.storyboard in Resources */,
 				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
 				C75CBC291BDD5450004D03A2 /* IQKeyboardManager.bundle in Resources */,
 				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
+				C7567EDF1C29B20F00D67178 /* ArcherPro-Book.otf in Resources */,
 				C75CBC281BDD5450004D03A2 /* Info.plist in Resources */,
 				C7975D8C1BE03DD600EF601B /* ProfileHeaderView.xib in Resources */,
 				75C74E121BD933650012297E /* Quotes.plist in Resources */,
@@ -548,6 +575,7 @@
 				753F3A511BD69CC0001CD7E8 /* BridgingHeader.m in Sources */,
 				753F3A621BD6DB25001CD7E8 /* FeedCell.swift in Sources */,
 				C75CBC241BDD5450004D03A2 /* IQBarButtonItem.swift in Sources */,
+				C7E06DF31C0FCE9400EE25C0 /* Quote.swift in Sources */,
 				C75CBC1D1BDD5450004D03A2 /* IQUIViewController+Additions.swift in Sources */,
 				75C74E141BD93AA60012297E /* LibsListViewController.swift in Sources */,
 				C75CBBFE1BDADE68004D03A2 /* UIImageExtensions.swift in Sources */,
@@ -555,6 +583,7 @@
 				C75CBC1A1BDD5450004D03A2 /* IQNSArray+Sort.swift in Sources */,
 				C75CBC201BDD5450004D03A2 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				C7FB976F1BF1091900F99EBF /* QuoteOfDayReusableView.swift in Sources */,
+				C7507A261C4AD75F0087AD0D /* IIFButton.swift in Sources */,
 				C756FC751BE2B81D00E28FFD /* NetworkManager.swift in Sources */,
 				C7FF7C891C05033E00696E7F /* ImagePickerController.swift in Sources */,
 				C75CBC1E1BDD5450004D03A2 /* IQUIWindow+Hierarchy.swift in Sources */,
@@ -562,7 +591,6 @@
 				753F3A4A1BD6872E001CD7E8 /* CreateLibViewController.swift in Sources */,
 				C75CBC251BDD5450004D03A2 /* IQTitleBarButtonItem.swift in Sources */,
 				753F3A4C1BD687C8001CD7E8 /* MadLib.swift in Sources */,
-				81BA814D1A49DA1800E65899 /* LoginViewController.swift in Sources */,
 				C75CBC1C1BDD5450004D03A2 /* IQUIView+Hierarchy.swift in Sources */,
 				C75CBC261BDD5450004D03A2 /* IQToolbar.swift in Sources */,
 				C7975D8E1BE1494F00EF601B /* ProfileHeaderReusableView.swift in Sources */,
@@ -571,12 +599,12 @@
 				75C74E0D1BD83F890012297E /* ProfileViewController.swift in Sources */,
 				753F3A531BD6BE68001CD7E8 /* MLTabBarController.swift in Sources */,
 				75C74E161BD9459F0012297E /* LibListCell.swift in Sources */,
-				75C74E0F1BD929E60012297E /* SearchViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 				C75CBC1B1BDD5450004D03A2 /* IQUITextFieldView+Additions.swift in Sources */,
 				753F3A4E1BD69015001CD7E8 /* MadLibManager.swift in Sources */,
 				C75CBC231BDD5450004D03A2 /* IQTextView.swift in Sources */,
 				75C74E0B1BD7F7930012297E /* ProfileInfoViewController.swift in Sources */,
+				C794E4D21C4BF764004BFA85 /* CustomNavigationAnimationController.swift in Sources */,
 				751DEF231BD593D600E96230 /* User.swift in Sources */,
 				C773852A1BDF1B6700A86E51 /* SearchCell.swift in Sources */,
 			);
@@ -681,7 +709,6 @@
 			baseConfigurationReference = 0C449890C0C7CBBAA363CFED /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -690,7 +717,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "ParseStarterProject-Swift";
 				PROVISIONING_PROFILE = "";
@@ -704,7 +731,6 @@
 			baseConfigurationReference = F69099205E343DE97A13EB87 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -713,7 +739,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "ParseStarterProject-Swift";
 				PROVISIONING_PROFILE = "";

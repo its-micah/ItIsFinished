@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9058" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9048"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Gotham-Book.otf">
             <string>Gotham-Book</string>
-            <string>Gotham-Book</string>
+        </mutableArray>
+        <mutableArray key="TypeTogether - EskapadeFraktur.otf">
+            <string>EskapadeFraktur</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -17,13 +19,11 @@
             <rect key="frame" x="0.0" y="0.0" width="332" height="213"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZLl-A9-q74">
+                <imageView userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZLl-A9-q74">
                     <rect key="frame" x="0.0" y="0.0" width="332" height="172"/>
-                    <animations/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quoteMarks" translatesAutoresizingMaskIntoConstraints="NO" id="nrU-0X-Vjz">
+                <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quoteMarks" translatesAutoresizingMaskIntoConstraints="NO" id="nrU-0X-Vjz">
                     <rect key="frame" x="290" y="12" width="30" height="30"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="gFW-0M-Zvh"/>
                         <constraint firstAttribute="height" constant="30" id="yRe-Lq-MhD"/>
@@ -32,9 +32,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="upV-X5-ydG">
                     <rect key="frame" x="0.0" y="0.0" width="332" height="172"/>
                     <subviews>
-                        <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-1" translatesAutoresizingMaskIntoConstraints="NO" id="UNW-Th-T18">
+                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wizardSplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="UNW-Th-T18">
                             <rect key="frame" x="25" y="87" width="60" height="60"/>
-                            <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="60" id="QGk-P9-w7p"/>
@@ -43,16 +42,14 @@
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5S-nq-a3b">
                             <rect key="frame" x="93" y="106" width="231" height="21"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="4Sv-qC-Me2"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="EskapadeFraktur" family="Eskapade Fraktur" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="P5S-nq-a3b" secondAttribute="trailing" constant="8" id="3Ky-AK-og4"/>
                         <constraint firstItem="P5S-nq-a3b" firstAttribute="centerY" secondItem="UNW-Th-T18" secondAttribute="centerY" id="DIN-RY-ZXa"/>
@@ -66,7 +63,6 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iX-Mi-cxX">
                             <rect key="frame" x="122" y="10" width="88" height="22"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="88" id="L08-YB-gx5"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="NZf-cz-8pD"/>
@@ -82,7 +78,6 @@
                             </connections>
                         </button>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" red="0.73569711538461524" green="0.73569711538461524" blue="0.73569711538461524" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="9iX-Mi-cxX" firstAttribute="centerX" secondItem="m9A-Ef-7Th" secondAttribute="centerX" id="CD7-pb-7bE"/>
@@ -93,11 +88,10 @@
                     </constraints>
                 </view>
             </subviews>
-            <animations/>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="m9A-Ef-7Th" firstAttribute="leading" secondItem="TRZ-uc-0r4" secondAttribute="leading" id="6n8-BQ-Y0c"/>
-                <constraint firstAttribute="bottom" secondItem="ZLl-A9-q74" secondAttribute="bottom" id="94n-Nu-wpN"/>
+                <constraint firstAttribute="bottom" secondItem="ZLl-A9-q74" secondAttribute="bottom" constant="41" id="94n-Nu-wpN"/>
                 <constraint firstItem="m9A-Ef-7Th" firstAttribute="top" secondItem="upV-X5-ydG" secondAttribute="bottom" id="AD9-8l-xiG"/>
                 <constraint firstItem="upV-X5-ydG" firstAttribute="top" secondItem="TRZ-uc-0r4" secondAttribute="top" id="B9w-WK-dP2"/>
                 <constraint firstAttribute="bottom" secondItem="m9A-Ef-7Th" secondAttribute="bottom" id="FWR-bq-2R8"/>
@@ -136,7 +130,7 @@
         </collectionReusableView>
     </objects>
     <resources>
-        <image name="profile-1" width="17" height="25"/>
         <image name="quoteMarks" width="107" height="76"/>
+        <image name="wizardSplashScreen" width="290" height="351"/>
     </resources>
 </document>

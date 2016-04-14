@@ -17,20 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quoteMarks" translatesAutoresizingMaskIntoConstraints="NO" id="lrp-Ei-Cgb">
-                                <rect key="frame" x="225" y="225" width="150" height="150"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashscreen1" translatesAutoresizingMaskIntoConstraints="NO" id="lrp-Ei-Cgb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="6wa-SW-rCI"/>
-                                    <constraint firstAttribute="width" constant="150" id="x8H-1q-K2c"/>
-                                </constraints>
                             </imageView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.92941176469999998" green="0.68235294120000001" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lrp-Ei-Cgb" firstAttribute="centerY" secondItem="1gt-1N-HuY" secondAttribute="centerY" id="q8p-Pp-34Z"/>
-                            <constraint firstItem="lrp-Ei-Cgb" firstAttribute="centerX" secondItem="1gt-1N-HuY" secondAttribute="centerX" id="vKn-Bo-hlu"/>
+                            <constraint firstItem="v2c-Rt-Cal" firstAttribute="top" secondItem="lrp-Ei-Cgb" secondAttribute="bottom" id="1Jw-zy-Glm"/>
+                            <constraint firstAttribute="trailing" secondItem="lrp-Ei-Cgb" secondAttribute="trailing" id="3NS-xB-2K1"/>
+                            <constraint firstItem="lrp-Ei-Cgb" firstAttribute="leading" secondItem="1gt-1N-HuY" secondAttribute="leading" id="Bed-Za-4Ax"/>
+                            <constraint firstItem="lrp-Ei-Cgb" firstAttribute="top" secondItem="1gt-1N-HuY" secondAttribute="top" id="SBH-Qk-WW9"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="quoteMarks" width="107" height="76"/>
+        <image name="splashscreen1" width="750" height="1334"/>
     </resources>
 </document>
