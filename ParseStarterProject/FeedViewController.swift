@@ -11,14 +11,18 @@ import SVProgressHUD
 import UIKit
 import Parse
 import ParseTwitterUtils
+import AVFoundation
 
 class FeedViewController: UIViewController,
-UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, FeedCellProtocol, NetworkProtocol {
+UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, FeedCellProtocol, NetworkProtocol, UIViewControllerTransitioningDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var feedCollectionView: UICollectionView!
     @IBOutlet weak var emptyFeedView: UIView!
+    @IBOutlet weak var animationImageView: UIImageView!
     let tapRecog = UITapGestureRecognizer()
     let refreshControl = UIRefreshControl()
+    let audioPlayer = AVAudioPlayer()
+    let customNavigationAnimationController = CustomNavigationAnimationController()
     var isRefreshing = false
     var feedArray = [PFObject]()
     var postUser: User? = nil
@@ -30,6 +34,8 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
         feedCollectionView.delegate = self
         feedCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
 
+        navigationController?.delegate = self
+
         refreshControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
         feedCollectionView.addSubview(refreshControl)
 
@@ -37,17 +43,29 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
 
         let headerNib = UINib(nibName: "QuoteOfDayView", bundle: nil)
         feedCollectionView.registerNib(headerNib, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "quoteOfDay")
+
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: UIColor.whiteColor(),
+                NSFontAttributeName: UIFont(name: "Eskapade Fraktur", size: 21)!]
     }
 
     
     override func viewWillAppear(animated: Bool) {
         refresh()
         self.emptyFeedView.alpha = 0
+
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        if MadLibManager.sharedInstance.libCreated == true {
+            animateSavedLibView()
+        }
     }
 
 
     func refresh() {
         NetworkManager.sharedInstance.loadFollowingLibs()
+        NetworkManager.sharedInstance.loadQuoteOfDay()
     }
 
     func endRefresh() {
@@ -62,11 +80,41 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
             emptyFeedView.alpha = 0
             self.feedCollectionView.reloadData()
             refreshControl.endRefreshing()
+
         } else {
             animateEmptyFeedView()
         }
 
 
+    }
+
+    func animateSavedLibView() {
+        print("animating view now")
+        animationImageView.hidden = false
+
+//        if let soundURL = NSBundle.mainBundle().URLForResource("thunder", withExtension: "mp3") {
+//            var mySound: SystemSoundID = 0
+//            AudioServicesCreateSystemSoundID(soundURL, &mySound)
+//            // Play
+//            AudioServicesPlaySystemSound(mySound);
+//        }
+
+
+        animationImageView.alpha = 1
+        var imagesArray = [UIImage]()
+        for name in ["savedLibAnimation_0.png", "savedLibAnimation_1.png", "savedLibAnimation_2.png", "savedLibAnimation_3.png", "savedLibAnimation_4.png", "savedLibAnimation_5.png", "savedLibAnimation_6.png", "savedLibAnimation_7.png", "savedLibAnimation_8.png", "csavedLibAnimation_9.png","savedLibAnimation_10.png", "savedLibAnimation_11.png", "savedLibAnimation_12.png", "savedLibAnimation_13.png", "savedLibAnimation_14.png", "savedLibAnimation_15.png", "savedLibAnimation_16.png", "savedLibAnimation_17.png", "savedLibAnimation_18.png", "savedLibAnimation_19.png", "csavedLibAnimation_20.png", "savedLibAnimation_21.png", "savedLibAnimation_22.png", "savedLibAnimation_23.png", "savedLibAnimation_24.png", "savedLibAnimation_25.png", "savedLibAnimation_26.png", "savedLibAnimation_27.png", "savedLibAnimation_28.png", "savedLibAnimation_29.png", "savedLibAnimation_30.png"] {
+            if let image = UIImage(named: name) {
+                imagesArray.append(image)
+            }
+        }
+
+        animationImageView.animationImages = imagesArray
+        animationImageView.animationDuration = 0.8
+        animationImageView.animationRepeatCount = 1
+        animationImageView.startAnimating()
+
+
+        MadLibManager.sharedInstance.libCreated = false
     }
 
     
@@ -102,6 +150,11 @@ UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFl
         let createLibVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CreateLibVC") as! CreateLibViewController
         createLibVC.libText = MadLibManager.sharedInstance.quoteOfDay
         self.navigationController?.pushViewController(createLibVC, animated: true)
+    }
+
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        customNavigationAnimationController.reverse = operation == .Pop
+        return customNavigationAnimationController
     }
 
 
