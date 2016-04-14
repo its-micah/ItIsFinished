@@ -15,6 +15,7 @@ class MadLibManager {
 
     var currentUser = PFUser.currentUser() as? User
     var quoteOfDay: String?
+    var libCreated: Bool?
 
     private init(){
         print("")
@@ -30,7 +31,7 @@ class MadLibManager {
 
 
     func getQuoteOfDay() -> String {
-        quoteOfDay = NetworkManager.sharedInstance.loadQuoteOfDay()
+        quoteOfDay = NetworkManager.sharedInstance.getQuoteOfDay()
         return quoteOfDay!
     }
 
