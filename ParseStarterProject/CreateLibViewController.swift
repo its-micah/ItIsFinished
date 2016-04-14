@@ -11,22 +11,29 @@ import SVProgressHUD
 import Parse
 import UIKit
 
-@IBDesignable class CreateLibViewController: UIViewController {
+@IBDesignable class CreateLibViewController: UIViewController, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate {
     
     @IBInspectable @IBOutlet weak var madLibText: UILabel!
     @IBOutlet weak var textField: UITextField!
     var libText: String?
 
+    @IBOutlet weak var itIsFinishedButton: UIButton!
+    @IBOutlet weak var wizardImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 10
+        paragraphStyle.lineSpacing = 6
 
         let attrString = NSMutableAttributedString(string: libText!)
         attrString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
 
         madLibText.attributedText = attrString
+
+        navigationController?.delegate = self
+
+        itIsFinishedButton.layer.borderWidth = 2.0
+        itIsFinishedButton.layer.borderColor = UIColor(red: 150/255, green: 150/255, blue: 142/255, alpha: 1).CGColor
 
     }
 
@@ -55,8 +62,9 @@ import UIKit
                     print("MadLib saved")
                     self.tabBarController?.selectedIndex = 0
                     let firstNavController = self.tabBarController?.selectedViewController as! UINavigationController
+                    MadLibManager.sharedInstance.libCreated = true
                     firstNavController.popToRootViewControllerAnimated(true)
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    //self.dismissViewControllerAnimated(true, completion: nil)
                 } else {
                     print("\(error?.debugDescription)")
                 }
