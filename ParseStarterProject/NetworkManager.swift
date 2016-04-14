@@ -23,11 +23,12 @@ class NetworkManager {
     var objectCount = 0
     var feedArrayCount = 0
     var followeeCount: Int?
+    var quoteOfTheDay: String? = ""
 
     func loadLibs() -> Array<PFObject> {
         let query = PFQuery(className: "MadLib")
         query.orderByDescending("createdAt")
-        query.cachePolicy = .CacheThenNetwork
+        query.cachePolicy = .IgnoreCache
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
 
             if let objects = objects {
@@ -86,7 +87,7 @@ class NetworkManager {
 
             let finalQuery = PFQuery.orQueryWithSubqueries([libsFromFollowers, libsFromCurrentUser])
             finalQuery.orderByDescending("createdAt")
-            finalQuery.cachePolicy = .CacheThenNetwork
+            finalQuery.cachePolicy = .IgnoreCache
 
             finalQuery.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
                 if error == nil && objects?.count > 0 {
@@ -103,9 +104,32 @@ class NetworkManager {
         return feedArray
     }
 
-    func loadQuoteOfDay() -> String {
-        let quoteOfDay = "Elvis has left the"
-        return quoteOfDay
+    func loadQuoteOfDay() {
+        let query = PFQuery(className: "Quote")
+
+        // this is the number of days to add or subtract from today to test with
+        let daysToAdd = 3
+        let testingDate = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: daysToAdd, toDate: NSDate(), options: NSCalendarOptions(rawValue: 0))
+
+        // this is a testing where clause
+        //query.whereKey("StartDate", greaterThan: testingDate!)
+
+        // this is the production where clause
+        query.whereKey("StartDate", greaterThan: NSDate())
+
+        query.orderByAscending("StartDate")
+        query.limit = 1;
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil && objects?.count > 0 {
+                    print("received \(objects?.count) quote")
+                        self.quoteOfTheDay = objects![0].objectForKey("Quote") as? String
+            }
+        }
+    }
+
+
+    func getQuoteOfDay() -> String {
+        return self.quoteOfTheDay!
     }
 
 
