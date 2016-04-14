@@ -52,10 +52,7 @@ class ProfileInfoViewController: UIViewController, UIImagePickerControllerDelega
             SVProgressHUD.show()
             newUser.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                 if success {
-                    let login: LoginViewController = self.presentingViewController as! LoginViewController
-                    self.dismissViewControllerAnimated(true, completion: nil)
-                    MadLibManager.sharedInstance.currentUser = newUser
-                }
+                                    }
             }
         }
     }
